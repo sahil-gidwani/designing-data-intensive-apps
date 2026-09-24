@@ -113,3 +113,93 @@ Typical analytical data pipeline:
 * Systems of record prioritize maintaining authoritative data.
 * Derived data systems make that data easier or faster to access for specific use cases.
 * Derived systems must be kept sufficiently synchronized with their sources to avoid serving stale or inconsistent information.
+
+# Cloud Versus Self-Hosting
+
+## Cloud Versus Self-Hosting
+
+* **Cloud hosting:** Rent computing resources, storage, and services from a cloud provider.
+* **Self-hosting:** Run and manage infrastructure on your own hardware or servers.
+* **Rule of thumb:** Keep core competencies and competitive advantages in-house; outsource routine, commonplace, or non-core activities to vendors.
+
+## Spectrum of Outsourcing Decisions
+
+Software and infrastructure management can be outsourced at different levels:
+
+* **Self-hosted:** Organization manages hardware, infrastructure, software, and operations.
+* **Infrastructure as a Service (IaaS):** Provider manages physical infrastructure; organization manages operating systems and applications.
+* **Platform as a Service (PaaS):** Provider manages infrastructure and runtime; organization focuses on application development.
+* **Software as a Service (SaaS):** Provider manages the application and underlying infrastructure; users consume the software.
+
+**Key idea:** Greater outsourcing generally reduces operational responsibility but also reduces control and customization.
+
+## Pros and Cons of Cloud Hosting
+
+**Advantages:**
+
+* **Scalability:** Resources can be increased or decreased based on demand.
+* **Reduced upfront costs:** Avoid purchasing and maintaining physical hardware.
+* **Managed services:** Providers handle tasks such as infrastructure maintenance and database management.
+* **Global availability:** Deploy applications across multiple geographic regions.
+* **Faster development:** Teams can provision resources quickly.
+
+**Disadvantages:**
+
+* **Ongoing costs:** Usage-based pricing can become expensive, especially at scale.
+* **Vendor lock-in:** Dependence on provider-specific services can make migration difficult.
+* **Reduced control:** Less control over the underlying infrastructure.
+* **Outages:** Provider failures can affect hosted applications.
+* **Security and compliance considerations:** Organizations must understand their responsibilities and the provider's responsibilities.
+
+## Cloud-Native System Architecture
+
+* Designing applications specifically to take advantage of cloud capabilities.
+* Common characteristics include:
+
+  * Elastic scaling.
+  * Automation and infrastructure as code.
+  * Managed services.
+  * Distributed and loosely coupled components.
+  * Containers and orchestration.
+  * Continuous integration and continuous delivery (CI/CD).
+  * Resilience to infrastructure failures.
+
+**Key idea:** Cloud-native architecture emphasizes automation, scalability, and resilience rather than simply moving existing applications to cloud servers.
+
+## Separation of Storage and Compute
+
+* Traditional systems often combine storage and computation on the same machines.
+* Cloud architectures can separate storage from compute, allowing each to scale independently.
+* Data can remain in shared storage while compute resources are added or removed as needed.
+
+**Advantages:**
+
+* Independent scaling of storage and compute.
+* Better resource utilization.
+* Flexible allocation of computing resources.
+* Multiple compute instances can access shared data.
+
+**Trade-off:** Network communication between storage and compute can introduce latency and data-transfer costs.
+
+## Operations in the Cloud Era: DevOps / SRE
+
+### DevOps
+
+* Combines development and IT operations practices to improve collaboration and software delivery.
+* Emphasizes automation, CI/CD, monitoring, and shared responsibility.
+* Aims to deliver changes quickly and reliably.
+
+### Site Reliability Engineering (SRE)
+
+* Applies software engineering principles to infrastructure and operations.
+* Focuses on system reliability, availability, performance, and scalability.
+* Uses automation to reduce repetitive manual operational work.
+
+**Important SRE concepts:**
+
+* **SLI (Service Level Indicator):** A measurable reliability metric, such as request latency or availability.
+* **SLO (Service Level Objective):** The target value for an SLI.
+* **SLA (Service Level Agreement):** A formal commitment to users, often including consequences if targets are not met.
+* **Error budget:** The acceptable amount of unreliability within an SLO period.
+
+**Key idea:** DevOps improves collaboration and delivery, while SRE applies engineering practices and measurable objectives to maintain reliable systems.
